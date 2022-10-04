@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+
+<body class="main">
+
+  <section class="content">
+
+    <div class="bankCards">
+      <div class="back card">
+        <img src="/images/bg-card-back.png" alt="Bank Card Back">
+        <p class="csvNumber" id="csvNumber">000</p>
+      </div>
+
+      <div class="front card">
+        <img src="/images/bg-card-front.png" alt="Bank Card Front">
+        <img id="logoImg" src="/images/empty.png" alt="Company">
+        <p class="numbers" id="numbers">0000 0000 0000 0000</p>
+        <p class="holderName" id="holderName">Jane Appleseed</p>
+        <div class="expireDate" id="expireDate">
+          <p>00 /</p>
+          <p>00</p>
+        </div>
+      </div>
+    </div>
+
+    <form id="form" class="form">
+
+      <div class="name">
+        <label for="fullName">Cardholder Name:</label>
+        <input type="text" id="name" name="fullName" placeholder="e.g. Jane Appleseed">
+      </div>
+
+      <div class="number">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="e.g. 1234 5678 9123 0000">
+        <span class="hide" id="numberWarn1">Wrong format, numbers only</span>
+      </div>
+
+      <div class="dateCvc">
+        <div class="date">
+          <label for="expDate">Exp. Date (MM/YY)</label>
+          <input type="text" id="month" name="month" placeholder="MM">
+          <input type="text" id="year" name="year" placeholder="YY">
+        </div>
+        <div class="cvc">
+          <label for="cvc">CVC</label>
+          <input type="text" id="cvc" name="cvc" placeholder="e.g. 123">
+        </div>
+        <span class="hide" id="numberWarn2">Wrong format, numbers only</span>
+      </div>
+
+      <input class="btn" id="btn" type="button" value="Confirm">
+
+    </form>
+
+  </section>
+
+  <div>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+      Mentor</a>.
+    Coded by <a href="#">Ilhom</a>.
+  </div>
+</body>
+
+</html>

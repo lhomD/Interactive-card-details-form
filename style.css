@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+/* Regular 400 Medium 500  */
+:root{
+    --body-Bg-Font: #ffffff;
+    --btn-Bg-font: #2c0a2e;
+    --grey-Font: #8e8593;
+    --border-Color: #dedddf;
+    --red-Color: #ff5252;
+
+}
+
+::before, ::after, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    font-family: 'Space Grotesk', sans-serif
+}
+
+body > div {
+    text-align: center;
+    padding: .5rem;
+    width: 100vw;
+    background-color: var(--btn-Bg-font);
+    color: var(--body-Bg-Font);
+}
+body > div a {
+    text-decoration: none;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.content img{
+    display: block;
+}
+
+.bankCards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 22.5rem;
+    width: 100vw;
+    margin-bottom: 6rem;
+    color: var(--body-Bg-Font);
+}
+
+.card{
+    width: 28rem;
+}
+
+.card img{
+    width: 100%;
+}
+
+.front{
+    margin: 0 7.1rem 0 1rem;
+    position: relative;
+    margin-top: -6rem;
+}
+
+.card img:nth-child(2){
+    width: 4rem;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+}
+
+.back{
+    margin: 2rem 1rem 0 7.1rem;
+    position: relative;
+}
+
+.back p{
+ position: absolute;
+ top: 6.5rem;
+ right: 4rem;
+ letter-spacing: 0.15rem;
+ font-size: 1.2rem;
+}
+
+.front .numbers{
+    font-size: 1.6rem;
+    letter-spacing: 0.15rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2rem;
+    right: 2rem;
+    word-spacing: 1rem;
+}
+
+.front .holderName, .front .expireDate{
+    letter-spacing: 0.15rem;
+    font-size: 1rem;
+    position: absolute;
+    top: 80%;
+    text-transform: uppercase;
+}
+
+.expireDate p{
+    display: inline-block;
+}
+
+.front .holderName{
+    left: 2rem;
+}
+.front .expireDate{
+   right: 2rem;
+}
+
+form{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 33rem;
+    max-width: 38rem;
+    color: var(--btn-Bg-font);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.16rem;
+    font-weight: 600;
+}
+
+.name label, .number label{
+    margin-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    display: block;
+}
+
+.form input[type=text]{
+    width: 100%;
+    padding: 1.6rem 1rem;
+    border: 1px solid var(--border-Color);
+    border-radius: .7rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.16rem;
+    font-weight: 500;
+    color: var(--grey-Font);
+}
+
+.dateCvc{
+ margin-top: 2rem;
+ display: grid;
+ grid-template-columns: 2fr 2fr;
+ grid-template-rows: 1fr auto;
+ gap: 1rem;
+}
+
+.dateCvc .warn{
+    grid-column: 1/4;
+}
+
+.date {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.date label{
+    grid-column: 1 / 4;
+}
+
+.cvc{
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+}
+
+.form input::placeholder{
+    font-size: 1.8rem;
+    font-family: inherit;
+}
+
+.form .hide{
+    text-transform: capitalize;
+    color: var(--red-Color);
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.form .warn {
+    opacity: 1;
+}
+
+
+#numberWarn2{
+    grid-column: 1/4;
+}
+
+.btn{
+    margin-top: 1rem;
+    border: none;
+    background-color: var(--btn-Bg-font);
+    color: var(--body-Bg-Font);
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 2%;
+    padding: 1.2rem 0;
+    border-radius: .7rem;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px){
+    .content{
+        flex-direction: row;
+        margin: 0;
+    }
+    .bankCards{
+        background-image: url("/images/bg-main-desktop.png");
+        background-position: left;
+        background-size: cover;
+        height: calc(100vh - 28px);
+        width: 48rem;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 4rem;
+        margin: 0;
+    }
+
+    .card{
+        width: 44rem;
+    }
+
+    .front{
+        margin: 0;
+        margin-left: 10%;
+    }
+
+    .card img:nth-child(2){
+        width: 7rem;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .back{
+        margin: 0;
+        margin-left: 30%;
+    }
+
+    .back p{
+        top: 10.5rem;
+        right: 5rem;
+        font-size: 1.8rem;
+    }
+
+    .front .numbers{
+        font-size: 2.4rem;
+        letter-spacing: 0.15rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-0%);
+        left: 2rem;
+        word-spacing: 3rem;
+    }
+
+    .front .holderName, .front .expireDate{
+        font-size: 1.6rem;
+        position: absolute;
+        top: 85%;
+    }
+    
+    .front .holderName{
+        left: 2rem;
+    }
+    .front .expireDate{
+       right: 2rem;
+    }
+
+    .form{
+        width: 100vw;
+        margin-left: 10%;
+        height: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .btn{
+        margin-top: 3.5rem;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    .form{
+        margin-left: 19%;
+    }
+    .front{
+        margin: 0;
+        margin-left: 65%;
+    }
+
+    .back{
+        margin: 0;
+        margin-left: 100%;
+    }
+}
