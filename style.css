@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
 /* Regular 400 Medium 500  */
-:root{
+:root {
     --body-Bg-Font: #ffffff;
     --btn-Bg-font: #2c0a2e;
     --grey-Font: #8e8593;
@@ -9,48 +10,60 @@
 
 }
 
-::before, ::after, *{
+::before,
+::after,
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 62.5%;
 }
 
-body{
+body {
     font-size: 1.6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    font-family: 'Space Grotesk', sans-serif
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
 }
 
-body > div {
+body>div {
     text-align: center;
     padding: .5rem;
     width: 100vw;
     background-color: var(--btn-Bg-font);
     color: var(--body-Bg-Font);
 }
-body > div a {
+
+body>div a {
     text-decoration: none;
 }
 
-.content{
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5rem;
 }
 
-.content img{
+.content.greating .form {
+    display: none;
+}
+
+.content .great {
+    display: none;
+}
+
+.content img {
     display: block;
 }
 
-.bankCards{
+.bankCards {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,52 +77,60 @@ body > div a {
     color: var(--body-Bg-Font);
 }
 
-.card{
+.card {
     width: 28rem;
 }
 
-.card img{
+.card img {
     width: 100%;
 }
 
-.front{
+.front {
     margin: 0 7.1rem 0 1rem;
     position: relative;
     margin-top: -6rem;
 }
 
-.card img:nth-child(2){
+.card img:nth-child(2) {
     width: 4rem;
     position: absolute;
     top: 1rem;
     left: 2rem;
 }
 
-.back{
+.back {
     margin: 2rem 1rem 0 7.1rem;
     position: relative;
 }
 
-.back p{
- position: absolute;
- top: 6.5rem;
- right: 4rem;
- letter-spacing: 0.15rem;
- font-size: 1.2rem;
+.back p {
+    position: absolute;
+    top: 6.5rem;
+    right: 4rem;
+    letter-spacing: 0.15rem;
+    font-size: 1.2rem;
 }
 
-.front .numbers{
-    font-size: 1.6rem;
-    letter-spacing: 0.15rem;
+.front .numbersHolder {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 2rem;
     right: 2rem;
-    word-spacing: 1rem;
 }
 
-.front .holderName, .front .expireDate{
+.numbers {
+    font-size: 1.6rem;
+}
+
+.numbers:nth-child(4),
+.numbers:nth-child(8),
+.numbers:nth-child(12) {
+    margin-right: 0.4rem;
+}
+
+.front .holderName,
+.front .expireDate {
     letter-spacing: 0.15rem;
     font-size: 1rem;
     position: absolute;
@@ -117,18 +138,19 @@ body > div a {
     text-transform: uppercase;
 }
 
-.expireDate p{
+.expireDate p {
     display: inline-block;
 }
 
-.front .holderName{
+.front .holderName {
     left: 2rem;
 }
-.front .expireDate{
-   right: 2rem;
+
+.front .expireDate {
+    right: 2rem;
 }
 
-form{
+form {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -142,13 +164,14 @@ form{
     font-weight: 600;
 }
 
-.name label, .number label{
+.name label,
+.number label {
     margin-bottom: 0.5rem;
     margin-top: 2.5rem;
     display: block;
 }
 
-.form input[type=text]{
+.form input[type=text] {
     width: 100%;
     padding: 1.6rem 1rem;
     border: 1px solid var(--border-Color);
@@ -159,15 +182,15 @@ form{
     color: var(--grey-Font);
 }
 
-.dateCvc{
- margin-top: 2rem;
- display: grid;
- grid-template-columns: 2fr 2fr;
- grid-template-rows: 1fr auto;
- gap: 1rem;
+.dateCvc {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr auto;
+    gap: 1rem;
 }
 
-.dateCvc .warn{
+.dateCvc .warn {
     grid-column: 1/4;
 }
 
@@ -177,38 +200,37 @@ form{
     gap: 1rem;
 }
 
-.date label{
+.date label {
     grid-column: 1 / 4;
 }
 
-.cvc{
+.cvc {
     display: grid;
     gap: 1rem;
     text-align: center;
 }
 
-.form input::placeholder{
+.form input::placeholder {
     font-size: 1.8rem;
     font-family: inherit;
 }
 
-.form .hide{
+.form .hide {
     text-transform: capitalize;
     color: var(--red-Color);
     opacity: 0;
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.3s ease-in;
 }
 
 .form .warn {
     opacity: 1;
 }
 
-
-#numberWarn2{
+#numberWarn2 {
     grid-column: 1/4;
 }
 
-.btn{
+.btn {
     margin-top: 1rem;
     border: none;
     background-color: var(--btn-Bg-font);
@@ -219,14 +241,56 @@ form{
     padding: 1.2rem 0;
     border-radius: .7rem;
     cursor: pointer;
+    width: 100%;
 }
 
-@media only screen and (min-width: 1024px){
-    .content{
+.content.greating .great {
+    display: flex;
+    order: 0;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 33rem;
+    max-width: 38rem;
+    transform: scale(1, 1);
+}
+
+.great div {
+    background: linear-gradient(180deg, #6448FE 0%, #600594 100%);
+    font-size: 3rem;
+    line-height: 3rem;
+    color: var(--body-Bg-Font);
+    padding: 3rem;
+    border-radius: 50%;
+    margin-top: 3rem;
+}
+
+.great h2 {
+    font-size: 2rem;
+    letter-spacing: 0.9rem;
+    color: var(--btn-Bg-font);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 3rem;
+}
+
+.great p {
+    color: var(--grey-Font);
+    margin-top: 2.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.great .btn {
+    margin-top: 5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+    .content {
         flex-direction: row;
         margin: 0;
     }
-    .bankCards{
+
+    .bankCards {
         background-image: url("/images/bg-main-desktop.png");
         background-position: left;
         background-size: cover;
@@ -238,56 +302,65 @@ form{
         margin: 0;
     }
 
-    .card{
+    .card {
         width: 44rem;
     }
 
-    .front{
+    .front {
         margin: 0;
-        margin-left: 10%;
     }
 
-    .card img:nth-child(2){
+    .card img:nth-child(2) {
         width: 7rem;
         top: 2rem;
         left: 2rem;
     }
 
-    .back{
+    .back {
         margin: 0;
         margin-left: 30%;
     }
 
-    .back p{
+    .back p {
         top: 10.5rem;
         right: 5rem;
         font-size: 1.8rem;
     }
 
-    .front .numbers{
-        font-size: 2.4rem;
-        letter-spacing: 0.15rem;
+    .front .numbersHolder {
         position: absolute;
         top: 50%;
         transform: translateY(-0%);
         left: 2rem;
-        word-spacing: 3rem;
     }
 
-    .front .holderName, .front .expireDate{
+    .numbers {
+        font-size: 2.4rem;
+    }
+
+    .numbers:nth-child(4),
+    .numbers:nth-child(8),
+    .numbers:nth-child(12) {
+        margin-right: 2rem;
+    }
+
+    .front .holderName,
+    .front .expireDate {
         font-size: 1.6rem;
         position: absolute;
         top: 85%;
     }
-    
-    .front .holderName{
+
+    .front .holderName {
         left: 2rem;
     }
-    .front .expireDate{
-       right: 2rem;
+
+    .front .expireDate {
+        right: 2rem;
     }
 
-    .form{
+    .form,
+    .great {
         width: 100vw;
         margin-left: 10%;
         height: 100%;
@@ -295,21 +368,24 @@ form{
         gap: 1.5rem;
     }
 
-    .btn{
+    .btn {
         margin-top: 3.5rem;
     }
 }
 
-@media only screen and (min-width: 1440px){
-    .form{
+@media only screen and (min-width: 1440px) {
+
+    .form,
+    .great {
         margin-left: 19%;
     }
-    .front{
+
+    .front {
         margin: 0;
         margin-left: 65%;
     }
 
-    .back{
+    .back {
         margin: 0;
         margin-left: 100%;
     }
