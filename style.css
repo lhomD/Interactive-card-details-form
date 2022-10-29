@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
 
 /* Regular 400 Medium 500  */
 :root {
@@ -7,7 +7,6 @@
     --grey-Font: #8e8593;
     --border-Color: #dedddf;
     --red-Color: #ff5252;
-
 }
 
 ::before,
@@ -28,25 +27,25 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     overflow-x: hidden;
 }
 
 /* Style för the footer section */
-body>div {
+body > div {
     text-align: center;
-    padding: .5rem;
+    padding: 0.5rem;
     width: 100vw;
     background-color: var(--btn-Bg-font);
     color: var(--body-Bg-Font);
 }
 
-body>div a {
+body > div a {
     text-decoration: none;
 }
 
 /* Style for other content and content within those*/
- 
+
 .content {
     display: flex;
     flex-direction: column;
@@ -55,17 +54,17 @@ body>div a {
 }
 
 /* Hide and show with JS */
-.form.confirmed{
+.form.confirmed {
     display: none;
     /* Add confirmed class to hide form section */
 }
-.greating{
+.greating {
     display: none;
     /* Change to flex after hideng form section */
 }
 
 /* Hero section. Bank cards */
-.hero{
+.hero {
     font-size: 1.6rem;
     color: var(--body-Bg-Font);
     font-weight: 500;
@@ -81,36 +80,37 @@ body>div a {
     text-transform: uppercase;
 }
 
-.hero-front_img, .hero-back_img{
+.hero-front_img,
+.hero-back_img {
     width: 28.6rem;
 }
 
-.hero-back{
+.hero-back {
     margin-left: auto;
     position: relative;
     letter-spacing: 0.1em;
 }
 
-.hero-back_cvc{
+.hero-back_cvc {
     position: absolute;
-    top: 40%;
+    top: 42%;
     right: 12%;
 }
 
-.hero-front{
+.hero-front {
     margin-right: auto;
     position: relative;
     margin-top: -7rem;
 }
 
-.hero-front_imgLogo{
+.hero-front_imgLogo {
     position: absolute;
     width: 4rem;
     left: 1rem;
     top: 1rem;
 }
 
-.hero-front-numbers{
+.hero-front-numbers {
     display: flex;
     gap: 1rem;
     position: absolute;
@@ -119,7 +119,7 @@ body>div a {
     transform: translateY(-50%);
 }
 
-.hero-front-info{
+.hero-front-info {
     position: absolute;
     bottom: 10%;
     left: 1rem;
@@ -127,10 +127,11 @@ body>div a {
     display: flex;
     justify-content: space-between;
     letter-spacing: 0.1em;
+    font-size: 1.2rem;
 }
 
 /* From field. Style section for from */
-.form{
+.form {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.16em;
@@ -139,16 +140,21 @@ body>div a {
     padding: 0 1rem;
 }
 
-input[name = "cardHolderName"], input[name = "cardNumber"]{
+input[name="cardHolderName"],
+input[name="cardNumber"] {
     display: block;
     width: 100%;
 }
 
-input[name = "cardHolderName"]{
+input[name="cardHolderName"] {
     margin-bottom: 2.4rem;
 }
 
-input[name = "cardHolderName"], input[name = "cardNumber"], input[name = "expDate"], input[name = "cvcNum"]{
+input[name="cardHolderName"],
+input[name="cardNumber"],
+input[name="expMonth"],
+input[name="expYear"],
+input[name="cvcNum"] {
     color: var(--grey-Font);
     font-family: inherit;
     font-size: 1.8rem;
@@ -157,16 +163,17 @@ input[name = "cardHolderName"], input[name = "cardNumber"], input[name = "expDat
     border-radius: 0.5rem;
 }
 
-input[name = "expDate"]{
+input[name="expMonth"],
+input[name="expYear"] {
     width: calc(25% - 0.5rem);
     text-transform: uppercase;
 }
 
-input[name = "cvcNum"] {
+input[name="cvcNum"] {
     width: calc(50% - 0.5rem);
 }
 
-input[type = "submit"]{
+input[type="submit"] {
     width: 100%;
     background-color: var(--btn-Bg-font);
     border: 0;
@@ -174,24 +181,25 @@ input[type = "submit"]{
     padding: 1rem;
     font-size: 1.8rem;
     font-weight: 500;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 }
 
-.warning{
+.warning {
     color: var(--red-Color);
     font-size: 1.2rem;
     text-transform: none;
     display: block;
-    margin-top: .4rem;
-    margin-bottom: .8rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
+    transition: opacity 300ms ease-in;
 }
 
-.warning{
+.warning {
     opacity: 0;
 }
 
 /* Confirmation of the submit */
-.greating{
+.greating {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -202,8 +210,8 @@ input[type = "submit"]{
     padding: 0 1rem;
 }
 
-.greating-circle{
-    background: linear-gradient(180deg, #6448FE 0%, #600594 100%);
+.greating-circle {
+    background: linear-gradient(180deg, #6448fe 0%, #600594 100%);
     border-radius: 50%;
     width: 8rem;
     height: 8rem;
@@ -215,73 +223,77 @@ input[type = "submit"]{
     margin-bottom: 3.6rem;
 }
 
-.greating-text{
+.greating-text {
     font-size: 2.6rem;
     color: var(--btn-Bg-font);
     text-transform: uppercase;
     margin-bottom: 1.6rem;
 }
 
-.greating-confim{
+.greating-confim {
     font-size: 1.8rem;
     color: var(--grey-Font);
     margin-bottom: 4.8rem;
 }
 
-@media only screen and (min-width: 413px){
+@media only screen and (min-width: 413px) {
     /* Hero section */
-    .hero{
+    .hero {
         font-size: 2rem;
         align-items: center;
         height: 30rem;
     }
-    .hero-front_img, .hero-back_img{
+    .hero-front_img,
+    .hero-back_img {
         width: 36.3rem;
     }
-    .hero-back{
+    .hero-back {
         margin-right: 10%;
     }
-    .hero-front{
+    .hero-front {
         margin-left: 10%;
         margin-top: -8rem;
     }
-    .hero-front_imgLogo{
+    .hero-front_imgLogo {
         position: absolute;
         width: 5rem;
         left: 2rem;
         top: 2rem;
     }
-    .hero-front-numbers{
+    .hero-front-numbers {
         gap: 2rem;
         left: 2rem;
     }
-    .hero-front-info_name{
+    .hero-front-info {
+        font-size: 1.4rem;
+    }
+    .hero-front-info_name {
         left: 2rem;
     }
 
     /* Form section */
-    .form{
+    .form {
         margin-top: 12rem;
-        max-width: 47.5rem; 
+        max-width: 47.5rem;
     }
     .form label:nth-of-type(4) {
         margin-left: 6rem;
     }
-    input[name = "cardHolderName"]{
+    input[name="cardHolderName"] {
         margin-bottom: 3.2rem;
     }
-    .warning{
+    .warning {
         margin-bottom: 1.6rem;
     }
 
     /* Confirmation section */
-    .greating{
+    .greating {
         margin-top: 12rem;
-        max-width: 47.5rem; 
+        max-width: 47.5rem;
     }
 }
 
-@media only screen and (min-width: 1441px){
+@media only screen and (min-width: 1441px) {
     .content {
         flex-direction: row;
         align-items: stretch;
@@ -290,7 +302,7 @@ input[type = "submit"]{
     }
 
     /* Hero section */
-    .hero{
+    .hero {
         font-size: 2.2rem;
         width: auto;
         background-image: url("/images/bg-main-desktop.png");
@@ -302,43 +314,46 @@ input[type = "submit"]{
         gap: 2rem;
     }
 
-    .hero-front_img, .hero-back_img{
+    .hero-front_img,
+    .hero-back_img {
         width: 44rem;
     }
-
-    .hero-back{
+    .hero-back {
         margin: 0;
         margin-left: 50rem;
     }
-    .hero-front{
+    .hero-front {
         margin: 0;
         margin-left: 30rem;
     }
-    .hero-front_imgLogo{
+    .hero-front_imgLogo {
         position: absolute;
         width: 6rem;
         left: 3rem;
         top: 3rem;
     }
-    .hero-front-numbers{
+    .hero-front-numbers {
         gap: 2rem;
         left: 3rem;
     }
-    .hero-front-info_name{
+    .hero-front-info {
+        font-size: 1.6rem;
+    }
+    .hero-front-info_name {
         left: 3rem;
     }
 
     /* Form section */
-    .form{
+    .form {
         align-self: center;
         margin-top: 0;
         max-width: 47.5rem;
-        margin-left: auto;        
+        margin-left: auto;
         margin-right: auto;
     }
 
     /* Confirmation section */
-    .greating{
+    .greating {
         margin: 0;
         margin: auto;
     }

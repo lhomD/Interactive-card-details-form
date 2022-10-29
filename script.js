@@ -1,220 +1,96 @@
-let form;               //Get whole form element 
-let cvcNums;            //CVC number reference
-let logoImg;            //Logotype of the company
-
-
-let cardNumEl;         //Card numbers placeholder
-
-
-
-
-/* 
-let warnTextEl2;
-let warnTextEl1;
-
-let numbers;
-let confirmBtn;
-let continueBtn; */
-
-let test;
-//---------------------------------------
+/* Globa lvariaels and constants */
+let formField;
+let dateEl;
+let spanEl;
+/* Initialize web page before loading JavaScript */
 function init() {
-    /* form = document.getElementById("form");
-    form.cvc.addEventListener("keyup", numberCVC); */
+    formField = document.getElementById("formField");
+    formField.cardHolderName.addEventListener("keyup", focusOnInput);
+    formField.expMonth.addEventListener("keyup", focusOnMonth);
+    formField.expYear.addEventListener("keyup", focusOnYear);
+    formField.cvcNum.addEventListener("keyup", focusOnCvc);
 
-    logoImg = document.getElementById("logoImg");
+    dateEl = document.querySelectorAll(".hero-front-info_month span");
+    spanEl = document.getElementById("warningDate");
 
-
-    cardNumEl = document.querySelectorAll(".nums");
-
-
-    test = document.getElementById("text");
-    test.addEventListener("keyup", cardControl);
-
-
-
-
-    /* 
-    form.year.addEventListener("keyup", checkYear);
-    form.month.addEventListener("keyup", checkMonth);
-    form.fullName.addEventListener("keyup", checkName);
-    warnTextEl2 = document.getElementById("numberWarn2");
-
-    form.cardNumber.addEventListener("keyup", cardNumber);
-    numbers = document.querySelectorAll(".numbers");
-    logoImg = document.getElementById("logoImg");
-    warnTextEl1 = document.getElementById("numberWarn1");
-
-    confirmBtn = document.getElementById("btnConf");
-    confirmBtn.addEventListener("click", greating);
-
-    continueBtn = document.getElementById("continue");
-    continueBtn.addEventListener("click", thanks); */
-}
+} //End init
 window.addEventListener("load", init);
-//End init
 
-//------------------------------------------------------------
-//Control of CVC number
-/* function numberCVC() {
-    let regex = /(\d{2,3})\d+/g;
-    let testPattern = regex.test(this.value);
-    let changeValue = this.value.slice(0, -1);
+/* Focus on cardholder input fields */
+function focusOnInput() {
+    let cardHolder = document.querySelector(".hero-front-info_name");
+    cardHolder.innerHTML = this.value;
+} //End focusOnInput
+
+/* Focus on Month input fields */
+function focusOnMonth() {
     let arr = this.value.split("");
-    this.style.textTransform = "uppercase";
-
-    if (arr.length == 4) {
-        this.value = changeValue;
-        this.style.borderColor = "grey";
-    } else if (arr.length > 2) {
-        if (!testPattern) {
-            this.style.borderColor = "#ff66cc";
-        } else {
-            this.style.borderColor = "grey";
-        }
+    let newValue = this.value.slice(0, -1);
+    if (arr.length > 2) {
+        this.value = newValue;
     }
-    cvcNums.innerHTML = this.value;
-} */
+    dateEl[0].innerHTML = this.value;
 
-//------------------------------------------------------------
-//Control of card number
-function cardControl() {
-
-
-    /* 
-    let regex = /(\d{15,16})+/g;
-    let arr = [];
-    arr = this.value.split(""); 
-    */
-
-    /*
-    if (arr.length >= 16) {
-         let changeValue = this.value.slice(0, -1);
-         let newArr = arr.slice(0, -1);
-         this.value = changeValue;
-         if (!regex.test(this.value)) {
-             console.log("Style red");
-             this.style.borderColor = "#ff66cc";
-         } else {
-             console.log("Style green");
-             this.style.borderColor = "grey";
-         }
-     } else if (arr.length == 17) {
-         let changeValue = this.value.slice(0, -1);
-         let newArr = arr.slice(0, -1);
-         this.value = changeValue;
-         if (!regex.test(this.value)) {
-             console.log("Style red");
-             this.style.borderColor = "#ff66cc";
-         } else {
-             console.log("Style green");
-             this.style.borderColor = "grey";
-         }
-     }
- 
-     for (let i = 0; i < arr.length; i++) {
-         if (cardNumEl[i]) {
-             cardNumEl[i].innerHTML = arr[i];
-         }
-    } 
-    */
-}
-
-
-
-
-
-
-
-
-
-
-//Confirm function
-function greating() {
-    /*  let inputs = form.querySelectorAll("input");
-     for (let i = 0; i < inputs.length; i++) {
-         if (inputs[i].value == 0) {
-             inputs[i].style.borderColor = "red";
-         } else {
-             form.parentNode.classList.add("greating");
-         }
-     } */
-}
-//hide thanks
-function thanks() {
-    /* form.parentNode.classList.remove("greating"); */
-}
-//Check Number of card
-function cardNumber() {
-    /*     let regex = /^(\d{0,16})\d+$/gi;
+    /* Regex controll */
+    let regex = /\d{2}/gi;
+    if (arr.length > 1) {
         if (!regex.test(this.value)) {
-            warnTextEl1.classList.add("warn");
+            this.style.borderColor = "red";
+            spanEl.innerHTML = "Only numbers";
+            spanEl.style.opacity = 1;
         } else {
-            warnTextEl1.classList.remove("warn");
+            this.style.borderColor = "#8e8593";
+            spanEl.innerHTML = "&nbsp;"
+            spanEl.style.opacity = 0;
         }
-    
-        let numberToField = this.value;
-        let arr = this.value.split("");
-    
-        for (let i = 0; i < arr.length; i++) {
-            if (numbers[i]) {
-                numbers[i].innerHTML = arr[i];
-            }
+    }
+} //End focusOnMonth
+
+/* Focus on Year input fields */
+function focusOnYear() {
+    let arr = this.value.split("");
+    let newValue = this.value.slice(0, -1);
+    if (arr.length > 3) {
+        this.value = newValue;
+    }
+    dateEl[2].innerHTML = this.value;
+
+    /* Regex controll */
+    let regex = /\d{2}/gi;
+    if (arr.length > 1) {
+        if (!regex.test(this.value)) {
+            this.style.borderColor = "red";
+            spanEl.innerHTML = "Only numbers";
+            spanEl.style.opacity = 1;
+        } else {
+            this.style.borderColor = "#8e8593";
+            spanEl.innerHTML = "&nbsp;"
+            spanEl.style.opacity = 0;
         }
-    
-        if (arr.length == 17) {
-            this.value = numberToField.slice(0, -1);
-        } */
-}
-
-//Check month field conteins only number
-function checkMonth() {
-    /*  let expireDate = document
-         .getElementById("expireDate")
-         .querySelectorAll("p");
-     let date = Number(this.value);
- 
-     if (date > 12) {
-         this.style.backgroundColor = "";
-         warnTextEl2.classList.add("warn");
-     } else if (date < 10) {
-         warnTextEl2.classList.remove("warn");
-         expireDate[0].innerHTML = this.value + " /";
-     } */
-}
-
-//Check year field conteins only number
-function checkYear() {
-    /* let expireDate = document
-        .getElementById("expireDate")
-        .querySelectorAll("p");
-    let regMonth = /^[0-9]{1,2}$/;
-    if (regMonth.test(this.value)) {
-        warnTextEl2.classList.remove("warn");
-    } else if (!regMonth.test(this.value)) {
-        this.style.backgroundColor = "";
-        warnTextEl2.classList.add("warn");
     }
-    expireDate[1].innerHTML = this.value; */
-}
+} //End focusOnYear
 
-//Check CVC field conteins only number
-function checkCvc() {
-    /* let cvcNum = document.getElementById("csvNumber");
-    let regCvc = /^[0-9]{3}$/;
-    if (regCvc.test(this.value)) {
-        warnTextEl2.classList.remove("warn");
-    } else if (!regCvc.test(this.value)) {
-        this.style.backgroundColor = "";
-        warnTextEl2.classList.add("warn");
+/* Focus on CVC input fields */
+function focusOnCvc() {
+    let arr = this.value.split("");
+    let newValue = this.value.slice(0, -1);
+    let cvcEl = document.querySelector(".hero-back_cvc");
+    if (arr.length > 3) {
+        this.value = newValue;
     }
+    cvcEl.innerHTML = this.value;
 
-    cvcNum.innerHTML = this.value; */
-}
-
-//Check Name field conteins only number
-function checkName() {
-    /* let nameElem = document.getElementById("holderName");
-    this.style.textTransform = "capitalize";
-    nameElem.innerHTML = this.value; */
-}
+    /* Regex controll */
+    let regex = /\d{3}/gi;
+    if (arr.length > 2) {
+        if (!regex.test(this.value)) {
+            this.style.borderColor = "red";
+            spanEl.innerHTML = "Only numbers";
+            spanEl.style.opacity = 1;
+        } else {
+            this.style.borderColor = "#8e8593";
+            spanEl.innerHTML = "&nbsp;"
+            spanEl.style.opacity = 0;
+        }
+    }
+} //End focusOnCvc
