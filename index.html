@@ -26,30 +26,10 @@
         <img class="hero-front_img" src="./images/bg-card-front.png" alt="Bank Card Front">
         <img class="hero-front_imgLogo" src="./images/empty.png" alt="Logo Of Bank">
         <div class="hero-front-numbers">
-          <div class="hero-front-numbers-part">
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-          </div>
-          <div class="hero-front-numbers-part">
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-          </div>
-          <div class="hero-front-numbers-part">
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-          </div>
-          <div class="hero-front-numbers-part">
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-            <span class="hero-front-numbers-part_number">0</span>
-          </div>
+          <span class="hero-front-numbers-part_number">0000</span>
+          <span class="hero-front-numbers-part_number">0000</span>
+          <span class="hero-front-numbers-part_number">0000</span>
+          <span class="hero-front-numbers-part_number">0000</span>
         </div>
         <div class="hero-front-info">
           <p class="hero-front-info_name">Jane Appleseed</p>
@@ -70,7 +50,7 @@
 
       <label for="cardNumber">Card number</label>
       <input type="text" name="cardNumber" placeholder="e.g 1234 5678 9123 0000">
-      <span class="warning">Can't be blnak</span>
+      <span class="warning" id="warningNumber">&nbsp;</span>
 
       <label for="expMonth">Exp. Date (mm/yy)</label>
       <label for="expYear">cvc</label>
@@ -80,7 +60,7 @@
       <input type="text" name="cvcNum" placeholder="e.g 12">
       <span class="warning" id="warningDate">&nbsp;</span>
 
-      <input type="submit" value="Confirm">
+      <input type="submit" id="submitForm" value="Confirm">
 
     </form>
 
