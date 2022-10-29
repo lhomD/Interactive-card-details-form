@@ -112,11 +112,11 @@ body > div a {
 
 .hero-front-numbers {
     display: flex;
-    gap: 1rem;
+    justify-content: space-around;
     position: absolute;
     top: 50%;
     left: 1rem;
-    transform: translateY(-50%);
+    right: 1rem;
 }
 
 .hero-front-info {
@@ -263,6 +263,7 @@ input[type="submit"] {
     .hero-front-numbers {
         gap: 2rem;
         left: 2rem;
+        right: 2rem;
     }
     .hero-front-info {
         font-size: 1.4rem;
@@ -335,6 +336,7 @@ input[type="submit"] {
     .hero-front-numbers {
         gap: 2rem;
         left: 3rem;
+        right: 3rem;
     }
     .hero-front-info {
         font-size: 1.6rem;
