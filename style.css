@@ -152,17 +152,14 @@ input[name = "cardHolderName"], input[name = "cardNumber"], input[name = "expDat
     color: var(--grey-Font);
     font-family: inherit;
     font-size: 1.8rem;
-    border: solid var(--grey-Font) 0.1rem;
-    padding: 0.5rem;
+    border: solid lightgray 0.1rem;
+    padding: 1rem 0.5rem;
     border-radius: 0.5rem;
-}
-
-.form label:nth-of-type(4) {
-    margin-left: 4rem;
 }
 
 input[name = "expDate"]{
     width: calc(25% - 0.5rem);
+    text-transform: uppercase;
 }
 
 input[name = "cvcNum"] {
