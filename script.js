@@ -11,7 +11,9 @@ function init() {
     formField.expYear.addEventListener("keyup", focusOnYear);
     formField.cvcNum.addEventListener("keyup", focusOnCvc);
     formField.cardNumber.addEventListener("keyup", checkCardNumber);
-    formField.submit.addEventListener("click", submutForm);
+
+    let submitBtn = document.getElementById("submitForm");
+    submitBtn.addEventListener("click", submutForm)
 
     dateEl = document.querySelectorAll(".hero-front-info_month span");
     spanEl = document.getElementById("warningDate");
@@ -121,19 +123,6 @@ function checkCardNumber() {
             numSpanEl.style.opacity = 0;
         }
     }
-    /* 
-    if (arr.length <= 16) {
-        if (!regex.test(this.value)) {
-            this.style.borderColor = "red";
-            numSpanEl.innerHTML = "Only numbers";
-            numSpanEl.style.opacity = 1;
-        } else {
-            this.style.borderColor = "#8e8593";
-            numSpanEl.innerHTML = "&nbsp;"
-            numSpanEl.style.opacity = 0;
-        }
-        this.value = newValue;
-    } */
 
     let numberEl = document.querySelectorAll(".hero-front-numbers-part_number");
     for (let i = 0; i < arr.length; i = i + 3) {
@@ -163,6 +152,19 @@ function submutForm(e) {
         }
     }
 
+    let greatingEl = document.getElementById("greating");
+    formField.style.opacity = "0"
+    setTimeout(() => {
+        formField.classList.add("confirmed");
+        greatingEl.style.display = "flex"
+    }, 300);
 
-
+    let submitBtn2 = document.getElementById("submitForm2");
+    submitForm2.addEventListener("click", () => {
+        formField.classList.remove("confirmed");
+        greatingEl.style.display = "none"
+        setTimeout(() => {
+            formField.style.opacity = "1"
+        }, 300);
+    })
 }

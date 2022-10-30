@@ -138,6 +138,7 @@ body > div a {
     margin-top: 7.5rem;
     width: 100%;
     padding: 0 1rem;
+    transition: opacity 300ms ease;
 }
 
 input[name="cardHolderName"],
@@ -192,6 +193,7 @@ input[type="submit"] {
     margin-top: 0.4rem;
     margin-bottom: 0.8rem;
     transition: opacity 300ms ease-in;
+    transition: opacity 300ms ease;
 }
 
 .warning {
