@@ -296,7 +296,7 @@ input[type="submit"] {
     }
 }
 
-@media only screen and (min-width: 1441px) {
+@media only screen and (min-width: 1280px) {
     .content {
         flex-direction: row;
         align-items: stretch;
@@ -323,11 +323,11 @@ input[type="submit"] {
     }
     .hero-back {
         margin: 0;
-        margin-left: 50rem;
+        margin-left: 30rem;
     }
     .hero-front {
         margin: 0;
-        margin-left: 30rem;
+        margin-left: 20rem;
     }
     .hero-front_imgLogo {
         position: absolute;
@@ -361,4 +361,14 @@ input[type="submit"] {
         margin: 0;
         margin: auto;
     }
+}
+
+@media only screen and (min-width: 1440px) {
+    .hero-back {
+        margin-left: 60rem;
+    }
+    .hero-front {
+        margin: 0;
+        margin-left: 40rem;
+    } 
 }
