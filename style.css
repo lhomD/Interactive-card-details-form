@@ -250,7 +250,7 @@ input[type="submit"] {
         width: 36.3rem;
     }
     .hero-back {
-        margin-right: 10%;
+        margin-right: auto;
     }
     .hero-front {
         margin-left: 10%;
@@ -277,7 +277,7 @@ input[type="submit"] {
     /* Form section */
     .form {
         margin-top: 12rem;
-        max-width: 47.5rem;
+        max-width: 40rem;
     }
     .form label:nth-of-type(4) {
         margin-left: 6rem;
@@ -292,7 +292,7 @@ input[type="submit"] {
     /* Confirmation section */
     .greating {
         margin-top: 12rem;
-        max-width: 47.5rem;
+        max-width: 40rem;
     }
 }
 
@@ -316,18 +316,13 @@ input[type="submit"] {
         height: auto;
         gap: 2rem;
     }
-
-    .hero-front_img,
-    .hero-back_img {
-        width: 44rem;
-    }
     .hero-back {
         margin: 0;
-        margin-left: 30rem;
+        margin-left: 20rem;
     }
     .hero-front {
         margin: 0;
-        margin-left: 20rem;
+        margin-left: 10rem;
     }
     .hero-front_imgLogo {
         position: absolute;
@@ -351,9 +346,8 @@ input[type="submit"] {
     .form {
         align-self: center;
         margin-top: 0;
-        max-width: 40rem;
         margin-left: auto;
-        margin-right: 5%;
+        margin-right: auto;
     }
 
     /* Confirmation section */
@@ -371,7 +365,11 @@ input[type="submit"] {
         margin: 0;
         margin-left: 40rem;
     } 
-    .form {
-        margin-right: auto;
+    .hero-front_img,
+    .hero-back_img {
+        width: 44rem;
     }
+/*     .form {
+        margin-right: 15%;
+    } */
 }
