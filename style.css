@@ -307,18 +307,21 @@ input[type="submit"] {
     /* Hero section */
     .hero {
         font-size: 2.2rem;
-        width: auto;
+        width: 48rem;
         background-image: url("/images/bg-main-desktop.png");
         padding: 0;
-        width: 30rem;
         justify-content: center;
         flex-direction: column-reverse;
         height: auto;
         gap: 2rem;
     }
+    .hero-front_img,
+    .hero-back_img {
+        width: 44rem;
+    }
     .hero-back {
         margin: 0;
-        margin-left: 20rem;
+        margin-left: 15rem;
     }
     .hero-front {
         margin: 0;
@@ -365,11 +368,4 @@ input[type="submit"] {
         margin: 0;
         margin-left: 40rem;
     } 
-    .hero-front_img,
-    .hero-back_img {
-        width: 44rem;
-    }
-/*     .form {
-        margin-right: 15%;
-    } */
 }
