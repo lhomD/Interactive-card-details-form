@@ -1,4 +1,4 @@
-# Frontend Mentor - Expenses chart component
+## Frontend Mentor - Expenses chart component
 
 ![Design preview for the Expenses chart component coding challenge](./design/mobile-design.jpg)
 
